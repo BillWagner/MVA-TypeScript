@@ -12,7 +12,7 @@
     }
 
     start() {
-        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
+        this.timerToken = setInterval(function () { this.span.innerHTML = new Date().toUTCString() }, 500);
     }
 
     stop() {
