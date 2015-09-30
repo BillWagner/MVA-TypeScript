@@ -1003,6 +1003,7 @@
     <TypeScriptCompile Include="App_Scripts\contentEditable.ts" />
     <TypeScriptCompile Include="App_Scripts\Label.d.ts" />
     <TypeScriptCompile Include="App_Scripts\labelCollection.ts" />
+    <TypeScriptCompile Include="App_Scripts\labelDataService.ts" />
     <TypeScriptCompile Include="App_Scripts\labelEditor.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
