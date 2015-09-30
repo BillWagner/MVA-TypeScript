@@ -6,5 +6,10 @@ module LabelApplication {
         static factory(): ng.IDirectiveFactory {
             return () => new ContentEditable();
         }
+
+        restrict = 'A';
+        require = 'ngModel';
+
+
     }
 }
