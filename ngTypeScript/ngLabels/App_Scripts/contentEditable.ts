@@ -22,4 +22,5 @@ module LabelApplication {
             });
         };        
     }
+    LabelEditor.editorModule.directive('contenteditable', ContentEditable.factory());
 }

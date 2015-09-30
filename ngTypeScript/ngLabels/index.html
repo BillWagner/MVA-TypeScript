@@ -8,12 +8,17 @@
     <div ng-controller="labelCollection as vm">
         <ul>
             <li ng-repeat="label in vm.sequence">
-                <span ng-style="{'background-color': label.Color }" >{{label.Text}}</span>
+                <span contenteditable
+                      ng-model="label.Text"
+                      class="ColorLabel"
+                      ng-model-options="{debounce: 250}"
+                      ng-style="{'background-color': label.Color }" />
             </li>
         </ul>
     </div>
     <script src="Scripts/angular.js"></script>
     <script src="App_Scripts/labelEditor.js"></script>
+    <script src="App_Scripts/contentEditable.js"></script>
     <script src="App_Scripts/labelCollection.js"></script>
 </body>
 </html>
