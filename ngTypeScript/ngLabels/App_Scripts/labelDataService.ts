@@ -25,5 +25,10 @@ module LabelApplication {
                     delete: { method: "DELETE" }
                 });
         }
+
+        public retrieveAllLabels() {
+            return this.resource.query();
+        }
+
     }
 }
