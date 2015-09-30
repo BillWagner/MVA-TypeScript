@@ -5,6 +5,13 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    <div ng-controller="labelCollection as vm">
+        <ul>
+            <li ng-repeat="label in vm.sequence">
+                <span ng-style="{'background-color': label.Color }" >{{label.Text}}</span>
+            </li>
+        </ul>
+    </div>
     <script src="Scripts/angular.js"></script>
     <script src="App_Scripts/labelEditor.js"></script>
     <script src="App_Scripts/labelCollection.js"></script>
