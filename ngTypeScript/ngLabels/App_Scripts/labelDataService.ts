@@ -11,9 +11,7 @@ module LabelApplication {
     interface ILabelResourceClass extends ngr.IResourceClass<ngr.IResource<Rest.Label>> {
         create(label: Rest.Label);
     }
-
-
-
+    
     LabelEditor.editorModule.factory('labelDataService', ["$resource",
         (r) => {
             return new LabelDataService(r);
@@ -48,6 +46,13 @@ module LabelApplication {
                 Id: 0,
                 Color: color,
                 Text: message
+            });
+            return this.resource.query();
+        }
+        
+        public deleteLabel(id: number) {
+            this.resource.delete({
+                Id: id
             });
             return this.resource.query();
         }

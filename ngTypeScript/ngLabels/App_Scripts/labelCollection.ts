@@ -23,6 +23,10 @@ module LabelApplication {
             this._labelMessage = "";
         }
 
+        public deleteLabel(id: number) {
+            this.sequence = this.service.deleteLabel(id);
+        }
+
         private _colorValue: string;
 
         get newColorValue() {
