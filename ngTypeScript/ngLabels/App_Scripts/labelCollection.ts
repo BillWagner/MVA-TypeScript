@@ -18,14 +18,25 @@ module LabelApplication {
         }
 
         public addColor() {
-            var item: LabelApplication.Rest.Label =
-                {
-                    Id: 6,
-                    Text: this.$scope.labelMessage,
-                    Color: this.$scope.colorValue
-                }
+            var newColor = this.service.createLabel(this._labelMessage, this._colorValue);
         }
 
+        private _colorValue: string;
+
+        get newColorValue() {
+            return this._colorValue;
+        }
+        set newColorValue(value: string) {
+            this._colorValue = value;
+        }
+
+        private _labelMessage: string;
+        get newLabelValue() {
+            return this._labelMessage;
+        }
+        set newLabelValue(value: string) {
+            this._labelMessage = value;
+        }
     }
     LabelEditor
         .editorModule

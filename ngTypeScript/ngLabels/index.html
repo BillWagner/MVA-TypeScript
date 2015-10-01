@@ -16,14 +16,12 @@
                       ng-style="{'background-color': label.Color }" />
             </li>
         </ul>
-    </div>
-    <div>
         New Label:
         <form class="form-inline">
             <label for="colorValue">Color:</label>
-            <input type="color" name="colorValue" />
+            <input type="color" name="colorValue" ng-model="vm.newColorValue" />
             <label for="labelMessage">Message:</label>
-            <input type="text" name="labelMessage" />
+            <input type="text" name="labelMessage" ng-model="vm.newLabelValue" />
             <button ng-click="vm.addColor()">Add Label</button>
         </form>
     </div>
