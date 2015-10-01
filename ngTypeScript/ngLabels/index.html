@@ -11,6 +11,7 @@
                 <span contenteditable
                       ng-model="label.Text"
                       class="ColorLabel"
+                      ng-change="vm.update(label)"
                       ng-model-options="{debounce: 250}"
                       ng-style="{'background-color': label.Color }" />
             </li>

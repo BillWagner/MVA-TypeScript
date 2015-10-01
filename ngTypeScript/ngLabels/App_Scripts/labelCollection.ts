@@ -13,6 +13,11 @@ module LabelApplication {
 
         sequence: ng.resource.IResourceArray<ng.resource.IResource<LabelApplication.Rest.Label>>;
 
+        public update(label: LabelApplication.Rest.Label) {
+            this.service.updateLabel(label);
+        }
+
+
     }
     LabelEditor
         .editorModule

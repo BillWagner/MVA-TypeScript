@@ -30,5 +30,8 @@ module LabelApplication {
             return this.resource.query();
         }
 
+        public updateLabel(label: Rest.Label) {
+            this.resource.save({ id: label.Id }, label);
+        }
     }
 }
