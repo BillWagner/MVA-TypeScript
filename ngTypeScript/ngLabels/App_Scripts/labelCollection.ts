@@ -18,7 +18,9 @@ module LabelApplication {
         }
 
         public addColor() {
-            var newColor = this.service.createLabel(this._labelMessage, this._colorValue);
+            this.sequence = this.service.createLabel(this._labelMessage, this._colorValue);
+            this._colorValue = "#FFFFFF";
+            this._labelMessage = "";
         }
 
         private _colorValue: string;

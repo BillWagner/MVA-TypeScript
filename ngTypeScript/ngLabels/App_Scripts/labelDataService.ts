@@ -44,11 +44,12 @@ module LabelApplication {
         }
 
         public createLabel(message: string, color: string) {
-            return this.resource.create({
+            this.resource.create({
                 Id: 0,
                 Color: color,
                 Text: message
             });
+            return this.resource.query();
         }
 
     }
