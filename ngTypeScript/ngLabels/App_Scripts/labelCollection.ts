@@ -17,6 +17,14 @@ module LabelApplication {
             this.service.updateLabel(label);
         }
 
+        public addColor() {
+            var item: LabelApplication.Rest.Label =
+                {
+                    Id: 6,
+                    Text: this.$scope.labelMessage,
+                    Color: this.$scope.colorValue
+                }
+        }
 
     }
     LabelEditor

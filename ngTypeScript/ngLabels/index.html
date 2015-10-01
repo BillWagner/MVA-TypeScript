@@ -17,6 +17,16 @@
             </li>
         </ul>
     </div>
+    <div>
+        New Label:
+        <form class="form-inline">
+            <label for="colorValue">Color:</label>
+            <input type="color" name="colorValue" />
+            <label for="labelMessage">Message:</label>
+            <input type="text" name="labelMessage" />
+            <button ng-click="vm.addColor()">Add Label</button>
+        </form>
+    </div>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="App_Scripts/labelEditor.js"></script>
