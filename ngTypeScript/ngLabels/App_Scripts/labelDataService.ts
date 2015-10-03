@@ -40,8 +40,11 @@ module LabelApplication {
             this.onUpdate = evHandler;
         }
         
-        public retrieveAllLabels() {
-            return this.resource.query();
+        private retrieveAllLabels() {
+            this.resource.query().$promise.then((result) => {
+                this.currentData = result;
+                this.onUpdate(this.currentData);
+            });
         }
 
         public updateLabel(label: Rest.Label) {
