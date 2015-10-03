@@ -50,7 +50,7 @@ module LabelApplication {
 
         public updateLabel(label: Rest.Label) {
             this.resource.save({ id: label.Id }, label,
-                () => this.retrieveAllLabels();
+                () => this.retrieveAllLabels());
         }
 
         public createLabel(message: string, color: string) {
