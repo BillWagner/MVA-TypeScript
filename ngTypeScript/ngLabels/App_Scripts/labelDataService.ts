@@ -9,7 +9,7 @@ module LabelApplication {
     // create an interface for the resource type because I like to use 
     // create instead of save for new objects:
     interface ILabelResourceClass extends ngr.IResourceClass<Rest.Label> {
-        create(label: Rest.Label);
+        create(label: Rest.Label, success: Function);
     }
     
     LabelEditor.editorModule.factory('labelDataService', ["$resource",
@@ -34,6 +34,7 @@ module LabelApplication {
                     query: { method: "GET", isArray: true },
                     delete: { method: "DELETE" }
                 });
+            this.retrieveAllLabels();
         }
 
         public setUpdateHandler(evHandler: (labels: Array<Rest.Label>) => void) {
@@ -48,7 +49,8 @@ module LabelApplication {
         }
 
         public updateLabel(label: Rest.Label) {
-            this.resource.save({ id: label.Id }, label);
+            this.resource.save({ id: label.Id }, label,
+                () => this.retrieveAllLabels();
         }
 
         public createLabel(message: string, color: string) {
@@ -56,15 +58,13 @@ module LabelApplication {
                 Id: 0,
                 Color: color,
                 Text: message
-            });
-            return this.resource.query();
+            }, () => this.retrieveAllLabels());
         }
         
         public deleteLabel(id: number) {
             this.resource.delete({
                 Id: id
-            });
-            return this.resource.query();
+            }, () => this.retrieveAllLabels());
         }
 
     }
