@@ -8,7 +8,7 @@ module LabelApplication {
 
     // create an interface for the resource type because I like to use 
     // create instead of save for new objects:
-    interface ILabelResourceClass extends ngr.IResourceClass<ngr.IResource<Rest.Label>> {
+    interface ILabelResourceClass extends ngr.IResourceClass<Rest.Label> {
         create(label: Rest.Label);
     }
     
@@ -19,6 +19,9 @@ module LabelApplication {
 
     export class LabelDataService {
         private resource: ILabelResourceClass;
+        private currentData: Array<Rest.Label>;
+        private onUpdate: (labels: Array<Rest.Label>) => void;
+
 
         constructor($resource: ngr.IResourceService) {
             this.resource = <ILabelResourceClass><any> $resource(
@@ -33,6 +36,10 @@ module LabelApplication {
                 });
         }
 
+        public setUpdateHandler(evHandler: (labels: Array<Rest.Label>) => void) {
+            this.onUpdate = evHandler;
+        }
+        
         public retrieveAllLabels() {
             return this.resource.query();
         }
