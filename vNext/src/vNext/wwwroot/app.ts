@@ -1,29 +1,32 @@
 ﻿/// <reference path="../typings/angular2/angular2.d.ts" />
 
-import {Component, View, bootstrap} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
-@Component({
-    selector: 'next-app'
-})
-@View({
-        template: `<h1>Introducing {{ phrase }}</h1>
-        < ul >
-        <li *ng-for="label of sequence">
-        <span ng- style="{'background-color': label.Color }" >{{label.Text }}</span>
-        < /li>
-        </ul>`
-})
-
-interface ILabel {
+interface Label {
     Id: number,
     Text: string,
     Color: string
 }
 
+
+@Component({
+    selector: 'next-app'
+})
+
+@View({
+        directives: [NgFor],
+        template: `<h1>Introducing {{ phrase }}</h1>
+        <ul>
+        <li *ng-for="#label of sequence">
+        <span>{{label.Text }}</span>
+        </li>
+        </ul>`
+    })
+
 // Component controller
 class MyAppComponent {
     phrase: string;
-    sequence: Array<ILabel>;
+    sequence: Array<Label>;
 
     constructor() {
         this.phrase = 'Angular 2.0 and TypeScript';
