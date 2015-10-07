@@ -16,3 +16,4 @@ class MyAppComponent {
         this.phrase = 'Angular 2.0 and TypeScript';
     }
 }
+bootstrap(MyAppComponent);
