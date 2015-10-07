@@ -6,7 +6,12 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     selector: 'next-app'
 })
 @View({
-    template: '<h1>Introducing {{ phrase }}</h1>'
+        template: `<h1>Introducing {{ phrase }}</h1>
+        < ul >
+        <li *ng-for="label of sequence">
+        <span ng- style="{'background-color': label.Color }" >{{label.Text }}</span>
+        < /li>
+        </ul>`
 })
 
 interface ILabel {
