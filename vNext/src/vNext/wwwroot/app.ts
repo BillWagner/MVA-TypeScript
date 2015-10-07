@@ -6,7 +6,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     selector: 'next-app'
 })
 @View({
-    template: '<h1>Introducting {{ phrase }}</h1>'
+    template: '<h1>Introducing {{ phrase }}</h1>'
 })
 // Component controller
 class MyAppComponent {
